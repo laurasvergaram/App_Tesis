@@ -39,7 +39,7 @@ public abstract class SpeechRecognizerPlugin
     //Features
     protected abstract void SetUp();
     public abstract void StartListening();
-    public abstract void StartListening(bool setContinuousListening = false, string language = "es-ES", int maxResults = 1);
+    public abstract void StartListening(bool setContinuousListening = false, string language = "en-US", int maxResults = 10);
     public abstract void StopListening();
     
     //Remember that all this modifier-methods will be applied when the last recognition ends...

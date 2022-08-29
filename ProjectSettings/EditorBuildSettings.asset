@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SpeechRecognizer.unity
+    path: Assets/Scenes/Home.unity
+    guid: 3d9ebe2881b1ba24fbef57f886642637
+  - enabled: 1
+    path: Assets/Scenes/Read.unity
     guid: 4f42df4bbb1de474cb66389498b70d31
+  - enabled: 1
+    path: Assets/Scenes/Stats.unity
+    guid: e1a2a474414498a41a4b378f1af71919
+  - enabled: 1
+    path: Assets/Scenes/Config.unity
+    guid: dbe0e463a11346b4e8616d201ac54c72
   m_configObjects: {}
