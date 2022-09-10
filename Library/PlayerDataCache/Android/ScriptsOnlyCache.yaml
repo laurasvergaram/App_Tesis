@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Scenes
     - SpeechRecognizer
     Unity.TextMeshPro.dll:
     - TMPro.TMP_Dropdown
@@ -10,8 +11,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.TestRunner.dll:
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -23,9 +22,57 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Toggle
   sceneClasses:
-    Assets/SpeechRecognizer.unity:
+    Assets/Scenes/Config.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9396}
+    - Class: 114
+      Script: {instanceID: 9398}
+    - Class: 114
+      Script: {instanceID: 9404}
+    - Class: 114
+      Script: {instanceID: 9410}
+    - Class: 114
+      Script: {instanceID: 9418}
+    - Class: 114
+      Script: {instanceID: 9452}
+    - Class: 114
+      Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 10288}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Home.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -42,13 +89,70 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 109
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9396}
+    - Class: 114
+      Script: {instanceID: 9398}
+    - Class: 114
+      Script: {instanceID: 9404}
+    - Class: 114
+      Script: {instanceID: 9410}
+    - Class: 114
+      Script: {instanceID: 9418}
+    - Class: 114
+      Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 9762}
+    - Class: 114
+      Script: {instanceID: 10048}
+    - Class: 114
+      Script: {instanceID: 10058}
+    - Class: 114
+      Script: {instanceID: 10168}
+    - Class: 114
+      Script: {instanceID: 10288}
+    - Class: 114
+      Script: {instanceID: 10380}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Read.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9314}
@@ -77,17 +181,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 9762}
-    - Class: 114
       Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10058}
     - Class: 114
       Script: {instanceID: 10164}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 10288}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -103,6 +203,51 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/Stats.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9396}
+    - Class: 114
+      Script: {instanceID: 9398}
+    - Class: 114
+      Script: {instanceID: 9404}
+    - Class: 114
+      Script: {instanceID: 9410}
+    - Class: 114
+      Script: {instanceID: 9418}
+    - Class: 114
+      Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 10288}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -339,6 +484,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements
+    className: CallbackExecutor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Editor
+    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -707,6 +864,12 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Scenes
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -749,5 +912,8 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/SpeechRecognizer.unity
-  playerPath: D:/UNIVERSIDAD/TESIIIIIIIIIIS/UnityAndroidSpeechRecognizer-master/3.apk
+  - Assets/Scenes/Home.unity
+  - Assets/Scenes/Read.unity
+  - Assets/Scenes/Stats.unity
+  - Assets/Scenes/Config.unity
+  playerPath: D:/UNIVERSIDAD/TESIIIIIIIIIIS/4.apk
