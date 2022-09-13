@@ -2,9 +2,10 @@
 
 public abstract class SpeechRecognizerPlugin
 {
+    //EDITAR AQUI
     protected bool isContinuousListening = false;
-    protected string language = "en-US";
-    protected int maxResults = 10;
+    protected string language = "es-ES";
+    protected int maxResults = 1;
     protected string gameObjectName = "SpeechRecognizer";
     
     protected SpeechRecognizerPlugin(string gameObjectName = null)
