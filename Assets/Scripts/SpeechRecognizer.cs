@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using static SpeechRecognizerPlugin;
+using System.Text;
+using System.Text.RegularExpressions;
+
+
 
 public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
 {
@@ -14,6 +18,8 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
     [SerializeField] private TextMeshProUGUI resultsTxt2 = null;// cuadro prquegno que muestra lo que se esta hablando en el momento
     [SerializeField] private TextMeshProUGUI errorsTxt = null;
 
+    [SerializeField] private Button nextBtn = null;
+
     [SerializeField] private TextMeshProUGUI stringA = null; //Texto del reconocimiento de voz 
     [SerializeField] private TextMeshProUGUI StringB = null; //Texto predefinido del cuento
 
@@ -25,12 +31,13 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
     private void Start()
     {
         plugin = SpeechRecognizerPlugin.GetPlatformPluginVersion(this.gameObject.name);
-        this.CuentoArray = this.Cuento.Split(' ');// asignacion del array del cuento segun el string del cuento
+        this.CuentoArray = Regex.Replace(this.Cuento.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "").ToLower().Split(' ');// asignacion del array del cuento segun el string del cuento quitando las tildes
         startListeningBtn.onClick.AddListener(StartListening);
         stopListeningBtn.onClick.AddListener(StopListening);
         continuousListeningTgle.onValueChanged.AddListener(SetContinuousListening);
         languageDropdown.onValueChanged.AddListener(SetLanguage);
         maxResultsInputField.onEndEdit.AddListener(SetMaxResults);
+        
     }
 
     private void StartListening()
@@ -65,13 +72,14 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
 
     public void OnResult(string recognizedResult)
     {
+        Debug.Log(recognizedResult);
         char[] delimiterChars = { '~' };
         string[] result = recognizedResult.Split(delimiterChars);
-        
+        int tempCount = this.count;
         for (int i = 0; i < result.Length; i++)
         {
             this.resultsTxt2.text = result[i]; //Muesra lo que se hablo en el momento!!!
-            string[] resultArray = result[i].Split(' '); //Crea un array de string que permite comparar palabra por palabra
+            string[] resultArray = Regex.Replace(result[i].Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "").ToLower().Split(' '); //Crea un array de string que permite comparar palabra por palabra quitando las tildes
             for (int c = 0; c < resultArray.Length; c++) // este for compara palabra por palabra del plugin vs el cuento
             {
                 stringA.text = resultArray[c]; //Texto del reconocimiento de voz 
@@ -85,11 +93,18 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
                     }
                 }
             }
+
+            if(this.count == tempCount){
+                Constants.errorsCount++; 
+            }else{
+                tempCount = this.count;
+            }
             
         }
 
         if (count == CuentoArray.Length)
         {
+            nextBtn.gameObject.SetActive(true);
             /* SE COLOCA LA FUNCIONALIDAD AL TERMINAR DE COMPARAR PRRO!!!  */
         }
     }

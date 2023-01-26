@@ -993,8 +993,13 @@ PrefabInstance:
     - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
         type: 3}
       propertyPath: Cuento
-      value: la tortuga siguio avanzando poco a poco y sin detenerse
+      value: "la tortuga sigui\xF3 avanzando poco a poco y sin detenerse"
       objectReference: {fileID: 0}
+    - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
+        type: 3}
+      propertyPath: nextBtn
+      value: 
+      objectReference: {fileID: 468512316}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86bcd9a3e40c894787919c0be2dc11d, type: 3}
 --- !u!1 &305840605
@@ -1297,7 +1302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &468512315
 RectTransform:
   m_ObjectHideFlags: 0

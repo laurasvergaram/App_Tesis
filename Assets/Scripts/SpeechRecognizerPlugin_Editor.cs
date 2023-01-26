@@ -15,9 +15,9 @@ public class SpeechRecognizerPlugin_Editor : SpeechRecognizerPlugin
     {
         SpeechRecognizer speechRecognizer = GameObject.FindObjectOfType<SpeechRecognizer>();
         if (this.isContinuous)
-            speechRecognizer.OnResult("continuous listening test~continuous listening test~continuous listening test");
+            speechRecognizer.OnResult("");
         else
-            speechRecognizer.OnResult("start listening test~start listening test~start listening test");
+            speechRecognizer.OnResult("");
     }
 
     public override void StartListening(bool setContinuousListening = false, string newLanguage = "en-US", int newMaxResults = 10)

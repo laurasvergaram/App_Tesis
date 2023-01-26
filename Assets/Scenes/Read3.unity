@@ -754,6 +754,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechRecognizer
       objectReference: {fileID: 0}
+    - target: {fileID: 5037975149294872944, guid: e86bcd9a3e40c894787919c0be2dc11d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5037975149294872958, guid: e86bcd9a3e40c894787919c0be2dc11d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -873,8 +878,13 @@ PrefabInstance:
     - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
         type: 3}
       propertyPath: Cuento
-      value: hagamos una carrera y veamos quien gana propusa la tortuga
+      value: "hagamos una carrera y veamos qui\xE9n gana propuso la tortuga"
       objectReference: {fileID: 0}
+    - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
+        type: 3}
+      propertyPath: nextBtn
+      value: 
+      objectReference: {fileID: 2013612568}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86bcd9a3e40c894787919c0be2dc11d, type: 3}
 --- !u!1 &322498627
@@ -5873,7 +5883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2013612567
 RectTransform:
   m_ObjectHideFlags: 0

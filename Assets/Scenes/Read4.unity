@@ -361,7 +361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &119833835
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3119,9 +3119,14 @@ PrefabInstance:
     - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
         type: 3}
       propertyPath: Cuento
-      value: al empezar la carrera la liebre salio disparada mientras que la tortuga
-        avanzo lentamente
+      value: "al empezar la carrera la liebre sali\xF3 disparada mientras que la tortuga
+        avanz\xF3 lentamente"
       objectReference: {fileID: 0}
+    - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
+        type: 3}
+      propertyPath: nextBtn
+      value: 
+      objectReference: {fileID: 119833836}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86bcd9a3e40c894787919c0be2dc11d, type: 3}
 --- !u!1 &1003316913

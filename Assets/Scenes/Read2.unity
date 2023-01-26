@@ -1730,7 +1730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &537986005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4620,9 +4620,14 @@ PrefabInstance:
     - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
         type: 3}
       propertyPath: Cuento
-      value: un dia se encontro con una tortuga que caminaba muy despacio la liebre
-        se burlo de su lentitud
+      value: "un d\xEDa se encontr\xF3 con una tortuga que caminaba muy despacio la
+        liebre se burl\xF3 de su lentitud"
       objectReference: {fileID: 0}
+    - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
+        type: 3}
+      propertyPath: nextBtn
+      value: 
+      objectReference: {fileID: 537986006}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86bcd9a3e40c894787919c0be2dc11d, type: 3}
 --- !u!1 &1699187066

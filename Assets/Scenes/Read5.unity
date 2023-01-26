@@ -4406,7 +4406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1682989362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6050,9 +6050,14 @@ PrefabInstance:
     - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
         type: 3}
       propertyPath: Cuento
-      value: al ver que sacaba una gran ventaja a la tortuga la liebre se paro en
-        un arbol a descansar
+      value: "al ver que sacaba una gran ventaja a la tortuga la liebre se par\xF3
+        en un \xE1rbol a descansar"
       objectReference: {fileID: 0}
+    - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
+        type: 3}
+      propertyPath: nextBtn
+      value: 
+      objectReference: {fileID: 1682989363}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86bcd9a3e40c894787919c0be2dc11d, type: 3}
 --- !u!1 &2146519774

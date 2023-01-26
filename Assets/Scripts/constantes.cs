@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
-public static class constantes
+public class Constantes : MonoBehaviour
 {
-    public static string cuento = "";
+    public static int errorsCount = 0;
 }

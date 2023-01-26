@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Constants
     - Scenes
     - SpeechRecognizer
     Unity.TextMeshPro.dll:
@@ -61,7 +62,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9454}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -112,15 +113,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9762}
     - Class: 114
-      Script: {instanceID: 10048}
+      Script: {instanceID: 10052}
     - Class: 114
-      Script: {instanceID: 10058}
+      Script: {instanceID: 10062}
     - Class: 114
-      Script: {instanceID: 10168}
+      Script: {instanceID: 10172}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10292}
     - Class: 114
-      Script: {instanceID: 10380}
+      Script: {instanceID: 10384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -183,13 +184,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
+      Script: {instanceID: 9956}
     - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -252,13 +255,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -319,13 +322,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -386,13 +389,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -453,13 +456,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -520,13 +523,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -587,13 +590,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -654,13 +657,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -721,13 +724,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 10048}
-    - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10052}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10172}
+    - Class: 114
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -774,7 +777,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9454}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1300,6 +1303,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: e470a6864400531d3707d4c4ed8876ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Constants
+  - hash:
+      serializedVersion: 2
       Hash: 3f8d7b92a6be3c715e55d5cfa7cc8384
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1366,7 +1375,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 9adec321e456ec769aee3eb9083ee232
+      Hash: 3187d520fcff86c0a17ecdb7e64b1de7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpeechRecognizer
@@ -1450,4 +1459,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Read7.unity
   - Assets/Scenes/Read8.unity
   - Assets/Scenes/Read9.unity
-  playerPath: L:/Tesis/Reade.apk
+  playerPath: L:/Tesis/Reade8.apk

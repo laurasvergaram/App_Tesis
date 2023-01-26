@@ -639,9 +639,14 @@ PrefabInstance:
     - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
         type: 3}
       propertyPath: Cuento
-      value: la liebre corrio y corrio pero fue demasiado tarde la tortuga cruzo la
-        meta agotada pero feliz
+      value: "la liebre corri\xF3 y corri\xF3 pero fue demasiado tarde la tortuga
+        cruz\xF3 la meta agotada pero feliz"
       objectReference: {fileID: 0}
+    - target: {fileID: 5037975149294872959, guid: e86bcd9a3e40c894787919c0be2dc11d,
+        type: 3}
+      propertyPath: nextBtn
+      value: 
+      objectReference: {fileID: 1004608952}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86bcd9a3e40c894787919c0be2dc11d, type: 3}
 --- !u!1 &139675215
@@ -3035,7 +3040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1004608951
 RectTransform:
   m_ObjectHideFlags: 0
