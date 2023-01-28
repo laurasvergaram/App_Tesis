@@ -26,6 +26,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/Config.unity:
@@ -180,6 +181,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9454}
     - Class: 114
+      Script: {instanceID: 9456}
+    - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
       Script: {instanceID: 9472}
@@ -251,6 +254,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9454}
     - Class: 114
+      Script: {instanceID: 9456}
+    - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
       Script: {instanceID: 9472}
@@ -317,6 +322,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9446}
     - Class: 114
       Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 9456}
     - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
@@ -385,6 +392,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9454}
     - Class: 114
+      Script: {instanceID: 9456}
+    - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
       Script: {instanceID: 9472}
@@ -451,6 +460,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9446}
     - Class: 114
       Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 9456}
     - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
@@ -519,6 +530,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9454}
     - Class: 114
+      Script: {instanceID: 9456}
+    - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
       Script: {instanceID: 9472}
@@ -585,6 +598,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9446}
     - Class: 114
       Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 9456}
     - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
@@ -653,6 +668,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9454}
     - Class: 114
+      Script: {instanceID: 9456}
+    - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
       Script: {instanceID: 9472}
@@ -719,6 +736,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9446}
     - Class: 114
       Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 9456}
     - Class: 114
       Script: {instanceID: 9458}
     - Class: 114
@@ -1375,7 +1394,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 3187d520fcff86c0a17ecdb7e64b1de7
+      Hash: 9efaa0a64ae44f1d2b9c39719347f6cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpeechRecognizer
@@ -1459,4 +1478,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Read7.unity
   - Assets/Scenes/Read8.unity
   - Assets/Scenes/Read9.unity
-  playerPath: L:/Tesis/Reade8.apk
+  playerPath: L:/Tesis/Reade20.apk

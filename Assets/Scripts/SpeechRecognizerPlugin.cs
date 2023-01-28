@@ -2,12 +2,12 @@
 
 public abstract class SpeechRecognizerPlugin
 {
-    //EDITAR AQUI
+    //EDITAR AQUI - La configuracion tomada en SpeechRecognizer sale de este pedazo----------- ESTE CODIGO NO ES PROPIO----------
     protected bool isContinuousListening = true;
     protected string language = "es-ES";
     protected int maxResults = 1;
     protected string gameObjectName = "SpeechRecognizer";
-    
+    // --------------------------------------------------------------------------------------------------
     protected SpeechRecognizerPlugin(string gameObjectName = null)
     {
         this.gameObjectName = gameObjectName;
@@ -29,7 +29,7 @@ public abstract class SpeechRecognizerPlugin
             return null;
         }
     }
-
+//-----------------------------------------NO SE USA NADA DE ABAJO (NO BORRAR)-----------------------------------------------------------------------------------------------------------------------------
     public enum ERROR { UNKNOWN, INVALID_LANGUAGE_FORMAT }
     public interface ISpeechRecognizerPlugin
     {

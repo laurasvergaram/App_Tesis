@@ -9,6 +9,7 @@ public class Constants : MonoBehaviour
 {
 
     public static int errorsCount = 0; // contador errores
+    public static bool[] paginasCuento = new bool[8]; // arreglo para mantener estado de completado de paginas anteriores
 
     [SerializeField] private TextMeshProUGUI DebugCont = null;// cuadro pequegno error log
 
