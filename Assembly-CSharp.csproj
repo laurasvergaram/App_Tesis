@@ -55,9 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\constantes.cs" />
      <Compile Include="Assets\Scripts\Constants.cs" />
+     <Compile Include="Assets\Scripts\OneTimeSound.cs" />
+     <Compile Include="Assets\Scripts\Report.cs" />
      <Compile Include="Assets\Scripts\Scenes.cs" />
+     <Compile Include="Assets\Scripts\SoundFX.cs" />
      <Compile Include="Assets\Scripts\SpeechRecognizer.cs" />
      <Compile Include="Assets\Scripts\SpeechRecognizerPlugin.cs" />
      <Compile Include="Assets\Scripts\SpeechRecognizerPlugin_Android.cs" />

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using static SpeechRecognizerPlugin;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 
 
@@ -22,6 +23,8 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
     public int NumPagina = 0; // Numero de pagina seteado dentro del unity (0-8, 9 paginas en total)
     public GameObject WinPanel; // Panel de felicitaciones
     public GameObject StartPanel; // Panel de recomendaciones/inicio
+    public GameObject ResetPanel = null; // Panel de resetear
+
 
     public bool ActiveListening; // Dejar activado la escucha de la app desde la primera pag sin necesidad de darle nuevamente a comenzar
 
@@ -36,6 +39,7 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
 
     private void Start()
     {
+        ResetPanel.gameObject.SetActive(false);
         WinPanel.gameObject.SetActive(false);
         plugin = SpeechRecognizerPlugin.GetPlatformPluginVersion(this.gameObject.name);
         this.CuentoArray = Regex.Replace(this.Cuento.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "").ToLower().Split(' ');// asignacion del array del cuento segun el string del cuento quitando las tildes
@@ -59,6 +63,15 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
             WinPanel.gameObject.SetActive(false);
             nextBtn.gameObject.SetActive(true);
             StartPanel.gameObject.SetActive(false);
+            resultsTxt.text = Cuento;
+
+            if(this.NumPagina == 0 && Constants.paginasCuento.Aggregate(true,(acumulado,valorActual) => acumulado && valorActual)) // se activa si todo el cuento ha sido leido
+            {
+                ResetPanel.gameObject.SetActive(true);
+            }
+            
+
+
         }
 
         if(this.ActiveListening) // Condicion para que siempre que este activado esta opcion desde el unity, se llame al comenzar a escuchar
@@ -80,6 +93,11 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
     public void ExitCongrats() 
     {
         WinPanel.gameObject.SetActive(false);
+    }
+
+    public void ExitReset() 
+    {
+        ResetPanel.gameObject.SetActive(false);
     }
 
     public void ExitStartPanel()
@@ -129,14 +147,14 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
                         this.count++; //contador global para la posicion de la palabra del cuanto a comparar
                     }
                 }
+                else
+                {
+                    if (!Constants.paginasCuento[this.NumPagina])
+                    {
+                    Constants.errorsCount[this.NumPagina]++; // suma las palabras en las que se equivoca al hablar
+                    }
+                }
             }
-            // Errores en la lectura (IN PROGRESS) NO TOCAR --------------------------------------------------------------
-            if(this.count == tempCount){
-                Constants.errorsCount++; 
-            }else{
-                tempCount = this.count;
-            }
-            // -----------------------------------------------------------------------------------------------------------
         }
 
         if (count == CuentoArray.Length) // condicion de terminado al igualar completamente el cuento con lo escuchado por la app
@@ -150,7 +168,6 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
             {
                 nextBtn.gameObject.SetActive(true);
             }
-
         }
     }
 
