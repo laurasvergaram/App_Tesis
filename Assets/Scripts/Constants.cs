@@ -13,6 +13,7 @@ public class Constants : MonoBehaviour
     public static bool[] paginasCuento = new bool[9]; // arreglo para mantener estado de completado de paginas anteriores
     public int pagina = 0;
 
+    [SerializeField] private TextMeshProUGUI resultsTxt = null; //cuadro grande que muestra las palabras que son iwales
     [SerializeField] private TextMeshProUGUI DebugCont = null;// cuadro pequegno error log
 
 
@@ -46,8 +47,9 @@ public class Constants : MonoBehaviour
         DebugCont.text = errorsCount[this.pagina].ToString();
     }
 
-    public void ResetData()
+    public void ResetData( [SerializeField] TextMeshProUGUI resultsTxt)
     {
+        resultsTxt.text = "";
         Array.Clear(errorsCount,0,errorsCount.Length);
         Array.Clear(paginasCuento,0,paginasCuento.Length);
     }

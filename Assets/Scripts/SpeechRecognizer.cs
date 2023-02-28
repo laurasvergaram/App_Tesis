@@ -69,9 +69,11 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
             {
                 ResetPanel.gameObject.SetActive(true);
             }
-            
 
-
+        }
+        else
+        {
+            resultsTxt.text = "";
         }
 
         if(this.ActiveListening) // Condicion para que siempre que este activado esta opcion desde el unity, se llame al comenzar a escuchar

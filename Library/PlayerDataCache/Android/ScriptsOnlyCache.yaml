@@ -1363,12 +1363,6 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 7ece9b8b30afab8eb358d86edb9f55c5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: OneTimeSound
-  - hash:
-      serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
     assemblyName: Unity.Analytics.Tracker.dll
     namespaceName: UnityEngine.Analytics
@@ -1435,7 +1429,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 4b3c1b320933c194bc5bdb34b6097b46
+      Hash: e71acda5770f9b5da9568fcaff7777eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Constants
@@ -1591,4 +1585,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Read7.unity
   - Assets/Scenes/Read8.unity
   - Assets/Scenes/Read9.unity
-  playerPath: L:/Tesis/Reade28.apk
+  playerPath: L:/Tesis/Reade32.apk
