@@ -37,52 +37,66 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
     private string[] CuentoArray = null;// Array completo del cuento
     private int count = 0;// contador global para la posicion de la palabra a comparar del cuento
 
+    /**
+     * Start
+     * * Este método es el encargado de inicializar el  SpeechRecognizer 
+     * *    el cual fué modificado para hacerlo compatible con las necesidades
+     * *    que presenta este proyecto.
+     * TODO: Este método fue modificado para la integración con el proyecto.
+     * @param NaN
+     */
     private void Start()
     {
         ResetPanel.gameObject.SetActive(false);
         WinPanel.gameObject.SetActive(false);
         plugin = SpeechRecognizerPlugin.GetPlatformPluginVersion(this.gameObject.name);
-        this.CuentoArray = Regex.Replace(this.Cuento.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "").ToLower().Split(' ');// asignacion del array del cuento segun el string del cuento quitando las tildes
+
+        //? Asignación del cuento procesando los caracteres especiales
+        this.CuentoArray = Regex.Replace(this.Cuento.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "").ToLower().Split(' ');
+        
         startListeningBtn.onClick.AddListener(StartListening);
-        stopListeningBtn.onClick.AddListener(StopListening);// Desactivado NO SE USA, viene con el script que se esta usando de reconocimiento de voz
+
+        //! Desactivado NO SE USA, viene con el script que se esta usando de reconocimiento de voz
+        stopListeningBtn.onClick.AddListener(StopListening); 
+        
         continuousListeningTgle.onValueChanged.AddListener(SetContinuousListening);
         languageDropdown.onValueChanged.AddListener(SetLanguage);
         maxResultsInputField.onEndEdit.AddListener(SetMaxResults);
 
-        if(this.NumPagina < 0 ) // Condicional para evitar que se crashee al revisar las paginas completadas
-        {
+        //? Este condiciconal asegura la integridad del valor mínimo y máximo de las páginas.
+        if(this.NumPagina < 0 ){
             this.NumPagina = 0;
-        }
-        else if(this.NumPagina > Constants.paginasCuento.Length - 1)
+        } else if(this.NumPagina > Constants.paginasCuento.Length - 1)
         {
             this.NumPagina = Constants.paginasCuento.Length - 1;
         }
         
-        if(Constants.paginasCuento[this.NumPagina]) // Condicional que activa/desactiva objetos al guardar el estado de la pagina anterior
-        {
+        /**
+         * ? Este condicional permite activar y desactivar dependiendo si se ha completado
+         *      anteriormente la página durante la iteración actual.
+         */ 
+        if(Constants.paginasCuento[this.NumPagina]){
             WinPanel.gameObject.SetActive(false);
             nextBtn.gameObject.SetActive(true);
             StartPanel.gameObject.SetActive(false);
             resultsTxt.text = Cuento;
-
-            if(this.NumPagina == 0 && Constants.paginasCuento.Aggregate(true,(acumulado,valorActual) => acumulado && valorActual)) // se activa si todo el cuento ha sido leido
-            {
+             // * Una vez el cuento se complete se activa esta condicional permitiendo reiniciar la iteración.
+            if(this.NumPagina == 0 && Constants.paginasCuento.Aggregate(true,(acumulado,valorActual) => acumulado && valorActual)) {
                 ResetPanel.gameObject.SetActive(true);
             }
 
         }
-        else
-        {
+        else{
             resultsTxt.text = "";
         }
 
-        if(this.ActiveListening) // Condicion para que siempre que este activado esta opcion desde el unity, se llame al comenzar a escuchar
-        {
+        //? Permite activar por defecto el plugin de escucha.
+        if(this.ActiveListening) {
             StartListening();
         }
     }
 
-    private void StartListening() // Funcion que llama al script SpeechRecognizerPlugin para comenzar a escuchar
+    private void StartListening() // Función que llama al script SpeechRecognizerPlugin para comenzar a escuchar
     {
         plugin.StartListening();
     }
@@ -107,12 +121,12 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
         StartPanel.gameObject.SetActive(false);
     }
 
-    private void SetContinuousListening(bool isContinuous) // Funcion que llama al script SpeechRecognizerPlugin para comenzar tener la escucha continua (seteado a true)
+    private void SetContinuousListening(bool isContinuous) // Función que llama al script SpeechRecognizerPlugin para comenzar tener la escucha continua (seteado a true)
     {
         plugin.SetContinuousListening(isContinuous);
     }
 
-    private void SetLanguage(int dropdownValue) // Funcion que llama al script SpeechRecognizerPlugin para saber que lenguaje escuchar principalmente (seteado a ES)
+    private void SetLanguage(int dropdownValue) // Función que llama al script SpeechRecognizerPlugin para saber que lenguaje escuchar principalmente (seteado a ES)
     {
         string newLanguage = languageDropdown.options[dropdownValue].text;
         plugin.SetLanguageForNextRecognition(newLanguage);
@@ -126,48 +140,57 @@ public class SpeechRecognizer : MonoBehaviour, ISpeechRecognizerPlugin
         int maxResults = int.Parse(inputValue);
         plugin.SetMaxResultsForNextRecognition(maxResults);
     }
-
-    public void OnResult(string recognizedResult) // Funcion que muestra y compara los resultados escuchados
-    {
+    /**
+     * OnResult
+     * * Este método es el encargado del procesamiento pesado de la cadena retornada por el plugin 
+     * *    el cual lleva el acumulado de los aciertos y errores en cada iteración por cada página.   
+     * TODO: Este método fue modificado para la integración con el proyecto.
+     * @param recognizedResult Es la cadena resultante que nos retorna el plugin de las palabras captadas.
+     */
+    public void OnResult(string recognizedResult){
         Debug.Log(recognizedResult);
         char[] delimiterChars = { '~' };
         string[] result = recognizedResult.Split(delimiterChars);
         int tempCount = this.count;
         for (int i = 0; i < result.Length; i++)
         {
-            this.resultsTxt2.text = result[i]; //Muesra lo que se hablo en el momento!!!
-            string[] resultArray = Regex.Replace(result[i].Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "").ToLower().Split(' '); //Crea un array de string que permite comparar palabra por palabra quitando las tildes
-            for (int c = 0; c < resultArray.Length; c++) // este for compara palabra por palabra del plugin vs el cuento
-            {
-                stringA.text = resultArray[c]; //Texto del reconocimiento de voz 
-                StringB.text = CuentoArray[this.count]; // texto predefinido del cuento
-                if (string.Compare(resultArray[c], CuentoArray[this.count]) == 0) //valida si las palabras son iguales
-                {
-                    resultsTxt.text += resultArray[c] + ' ';//Asignacion en el panel de result
-                    if (count < CuentoArray.Length)
-                    {
-                        this.count++; //contador global para la posicion de la palabra del cuanto a comparar
+            this.resultsTxt2.text = result[i]; //? Muestra las últimas palabras captadas.
+
+            //? Trasforma el valor primitivo en un array el cual prodrá ser analizado
+            string[] resultArray = Regex.Replace(result[i].Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "").ToLower().Split(' ');
+            
+            //? Este ciclo recorre todas las palabras captadas por el plugin y procesadas anteriormente.
+            for (int c = 0; c < resultArray.Length; c++){
+                stringA.text = resultArray[c]; //? Muestra la última palabra captada por el plugin 
+                StringB.text = CuentoArray[this.count]; //? Muestra la palabra actual del cuento
+
+                //? Valida la concordancia entre la palabra del plugin y la palabra actual del cuento
+                if (string.Compare(resultArray[c], CuentoArray[this.count]) == 0){
+                    resultsTxt.text += resultArray[c] + ' '; //? Asigna las palabras correctas al panel de resultados
+                    if (count < CuentoArray.Length){
+                        this.count++; //? Contador para la posición de la palabra del cuento a comparar
                     }
                 }
-                else
-                {
-                    if (!Constants.paginasCuento[this.NumPagina])
-                    {
-                    Constants.errorsCount[this.NumPagina]++; // suma las palabras en las que se equivoca al hablar
+                else{
+                    if (!Constants.paginasCuento[this.NumPagina]){
+                    Constants.errorsCount[this.NumPagina]++; //? Acumula los errores al momento de leer el cuento
                     }
                 }
             }
         }
 
-        if (count == CuentoArray.Length) // condicion de terminado al igualar completamente el cuento con lo escuchado por la app
-        {
-            /* SE COLOCA LA FUNCIONALIDAD AL TERMINAR DE COMPARAR */
+        //? Esta condición se activa cuando la cantidad de aciertos sea la misma al tamaño del cuento
+        if (count == CuentoArray.Length) {
+            /** 
+             * *SE COLOCA LA FUNCIONALIDAD AL TERMINAR DE COMPARAR 
+             */
 
-            Constants.paginasCuento[this.NumPagina] = true; // activa cada pagina leida y guarda el estado de leido mientras la aplicacion esta activa
+            //? Activa cada página leída y guarda el estado de leído mientras la aplicación está activa
+            Constants.paginasCuento[this.NumPagina] = true; 
             WinPanel.gameObject.SetActive(true);
 
-            if(nextBtn != null) // condicional evita que se crashee la app por falta del boton next en la ultima pagina
-            {
+            //? Condicional evita que se crashee la app por falta del botón next en la última página
+            if(nextBtn != null){
                 nextBtn.gameObject.SetActive(true);
             }
         }
